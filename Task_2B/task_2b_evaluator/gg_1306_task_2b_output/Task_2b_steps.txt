@@ -1,0 +1,31 @@
+Team ID = 1306
+Trained weights drive link = "https://drive.google.com/file/d/1JWtxzIkf4WcVuBIjhbaKE7ILugvEFD2F/view?usp=sharing"
+###############################################################################
+
+Please write the complete steps taken by your team explaining how you completed Task 2B. It is advised to be as elaborate as possible.
+
+1. We started by training a Deep Learning model using the TensorFlow and Keras libraries. We used a pre-trained DenseNet201 model, with weights from ImageNet, for our initial model architecture. The model was trained to classify five different event categories: combat, destroyed building, fire, humanitarian aid, and military vehicles.
+
+2. Our training data consisted of images categorized into these five classes. We used data augmentation techniques, including rotation, width and height shifts, shear, zoom, and horizontal flip, to artificially increase our training data and enhance the model's ability to generalize.
+
+3. We split our training dataset into training and validation subsets using a 80/20 split. This allowed us to monitor the model's performance during training and prevent overfitting.
+
+4. To fine-tune the pre-trained model, we made the last ten layers trainable while keeping the rest of the layers frozen. This allowed our model to adapt to our specific task while retaining the valuable features learned from ImageNet data.
+
+5. We employed a learning rate scheduler to dynamically adjust the learning rate during training, optimizing the model's performance.
+
+6. We also used early stopping with a patience of 5 to halt training when validation loss stopped improving, saving time and preventing overfitting.
+
+7. We trained the model for 20 epochs to ensure that it converged and achieved the best possible accuracy on the task.
+
+8. Once training was complete, we saved the trained model as "alien_attack_model.h5."
+
+9. In the Task 2B code, we loaded the trained model using `tf.keras.models.load_model`. This allowed us to access the trained weights and architecture for classifying events.
+
+10. For event classification, we read image paths from input files and passed them to the loaded model. Before making predictions, we preprocessed each image using the same preprocessing steps used during training, including resizing to (224, 224) and rescaling.
+
+11. We made predictions on the test data using the model, which generated probabilities for each event class. To obtain a final event classification, we selected the class with the highest probability as the detected event.
+
+12. Finally, we recorded the detected events and printed the results to the standard output. The output was saved in a file named "detected_events.txt."
+
+13. We made use of the given task_2b.py boilerplate code to run the image classification on the e-Yantra platform. The final results were shared with the platform for evaluation.
