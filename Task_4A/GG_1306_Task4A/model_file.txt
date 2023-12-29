@@ -1,0 +1,2 @@
+Team ID = 1306
+Trained weights drive link = "https://drive.google.com/file/d/1vTxc6eQUZzgQHN7jZ_1gHPaUs2Va5V2y/view?usp=sharing"
